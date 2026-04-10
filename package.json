@@ -1,0 +1,24 @@
+{
+  "name": "mc-db-forge",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "mcdb": "./dist/cli.js"
+  },
+  "scripts": {
+    "test": "tsx --test tests/*.test.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsx src/cli.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/pg": "^8.15.6",
+    "tsx": "^4.20.0",
+    "typescript": "^5.8.0"
+  },
+  "dependencies": {
+    "pg": "^8.16.3",
+    "yaml": "^2.8.1"
+  }
+}

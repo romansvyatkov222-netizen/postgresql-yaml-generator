@@ -1,0 +1,15 @@
+tables:
+  players:
+    columns:
+      id: uuid pk
+      name: string
+      balance: int
+
+user:
+  username: mcdb_user
+  password: ${DB_PASSWORD}
+
+grants:
+  - table: players
+    privileges:
+      - SELECT

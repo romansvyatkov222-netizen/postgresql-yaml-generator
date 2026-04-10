@@ -1,0 +1,37 @@
+﻿# =====================================
+# Пример конфигурации MC-DB Forge
+# =====================================
+
+# Типы:
+# uuid, int, string, text, boolean, float, timestamp
+# pk = первичный ключ
+# fk(table.column) = связь с другой таблицей
+
+tables:
+  players:
+    columns:
+      id: uuid pk
+      name: string
+      balance: int
+
+  homes:
+    columns:
+      id: uuid pk
+      player_id: uuid fk(players.id)
+      home_name: string
+
+user:
+  username: my_user
+  password: ${DB_PASSWORD}
+
+grants:
+  - table: players
+    privileges:
+      - SELECT
+      - INSERT
+      - UPDATE
+
+  - table: homes
+    privileges:
+      - SELECT
+      - INSERT
